@@ -1,3 +1,6 @@
+READ GOUAI.PDF TO UNDERSTAND WHAT'S BEING IMPLEMENTED!!
+
+
 This project utilizes Python and requires a dedicated environment to manage dependencies. The following steps outline how to set up the environment using Anaconda (or Miniconda) on macOS.
 
 **1. Create and Activate Conda Environment:**
