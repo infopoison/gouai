@@ -327,12 +327,13 @@ task_type: "{parent_yaml.get('task_type', 'N/A')}"
     1. Thoroughly review the GOUAI Protocol Definition...
     2. Carefully review the PARENT_TASK_DEFINITION_CONTENT...
     3. Parent Task WSOD Formulation (GOUAI Phase 1):
-    Your FIRST and MOST CRITICAL task is to analyze the PARENT_HLG and any available meta-context to formulate a comprehensive, clear, and actionable Workable Stated Output Descriptor (WSOD) for this parent task. This WSOD should be suitable for subsequent decomposition and clearly define the overall desired output.
+    Your FIRST and MOST CRITICAL task is to analyze the PARENT_HLG and any available meta-context to complete the phase one stages.
     4. Sub-task Decomposition (GOUAI Phase 2):
-    Based on the parent WSOD that you have just formulated in step 3, decompose this parent WSOD into a set of granular, actionable sub-tasks. For each proposed sub-task, you must define:
+    Based on phase 1 and phase 2.1, decompose the high level goal into a set of granular, actionable sub-tasks. For each proposed sub-task, you must define:
     * A clear High-Level Goal (HLG) for the sub-task.
     * A preliminary list of key Epistemic Uncertainties (EUs) related to achieving the sub-task's HLG.
     * A list of Key Information Requirements (KIRQs) needed to resolve those EUs or define the sub-task's output.
+    This will all help us formulate a WSOD after the KIRQ information is retrieved and the uncertainties resolved
     5. Output Formatting Instructions:
     Present your full analysis in the structured Markdown format specified below.
     The ## PARENT_WSOD section in your output must contain the complete WSOD you formulated in step 3.
