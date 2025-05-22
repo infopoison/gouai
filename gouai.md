@@ -1,4 +1,12 @@
-**Goal-Oriented Uncertainty-Aware LLM Interaction Protocol (GOUAI Protocol)**
+You've identified a very insightful point about the evolving nature of the WSOD within the GOUAI protocol, and your proposed refinement makes excellent sense for enhancing clarity and accuracy. The idea that Phase 1 aims to define a WSOD that clarifies "known unknowns" and Phase 2 then resolves these to form a "final WSOD" is a strong improvement.
+
+This aligns well with the iterative refinement principle of GOUAI and the focus on explicit uncertainty management.
+
+Here's a proposed revised version of the GOUAI Protocol, incorporating your feedback:
+
+---
+
+**Goal-Oriented Uncertainty-Aware LLM Interaction Protocol (GOUAI Protocol) - Revised Version X.Y**
 
 **Overarching Principles:**
 
@@ -11,9 +19,9 @@
 
 ---
 
-**Phase 1: Goal & Descriptor Elucidation (GDE)**
+**Phase 1: Goal & Initial Descriptor Elucidation (GIDE)**
 
-* **Objective:** To iteratively refine an initial, possibly ambiguous, high-level user goal into a "Workable Stated Output Descriptor (WSOD)" by exploring its facets, implications, and explicitly identifying associated uncertainties and its alignment with the user's overarching meta-goals.
+* **Objective:** To iteratively refine an initial, possibly ambiguous, high-level user goal into an **Initial Workable Stated Output Descriptor (Initial WSOD)**. This Initial WSOD will identify the *scope* and *known unknowns* of the desired output, defining what needs to be understood or acquired in Phase 2. This phase is about clarifying the problem space sufficiently to identify all key information requirements, even if the information itself isn't yet known.
 
 * **Stage 1.1: Articulation of Initial High-Level Goal(s) (HLG) & Meta-Context**
     * User articulates their HLG(s) (e.g., "minimize individual and human suffering," "maximize specific project success," "understand complex topic X").
@@ -28,47 +36,49 @@
     * **User Interaction:** User guides the exploration, clarifies intent, and begins to narrow focus towards a more specific type of desired output or understanding.
     * **LD Update:** Record of exploration paths, key insights, and emerging focus.
 
-* **Stage 1.3: Formulation of Candidate Workable Stated Output Descriptor (cWSOD_n)**
-    * Based on Stage 1.2, the user, with LLM assistance, formulates a more concrete (though still potentially abstract) descriptor for a specific desired output (cWSOD_n).
+* **Stage 1.3: Formulation of Initial Workable Stated Output Descriptor (Initial WSOD_n)**
+    * Based on Stage 1.2, the user, with LLM assistance, formulates a more concrete (though still potentially abstract) descriptor for a specific desired output. This `Initial WSOD_n` focuses on defining the *structure, components, and placeholders for information that will be acquired in Phase 2*. It explicitly highlights areas of "known unknowns" or required inputs.
 
-* **Stage 1.4: Uncertainty & Goal Alignment Assessment for cWSOD_n**
+* **Stage 1.4: Uncertainty & Goal Alignment Assessment for Initial WSOD_n**
     * **Action (User, supported by LLM):**
-        1.  **Enumerate Epistemic Uncertainties within cWSOD_n:**
+        1.  **Enumerate Epistemic Uncertainties within Initial WSOD_n:**
             * What terms are still ambiguous or underspecified?
             * What assumptions are embedded in this descriptor?
             * What knowledge gaps does this descriptor reveal regarding its own feasibility or scope?
-        2.  **Identify Potential Aleatoric Uncertainties:** What inherent randomness or external factors might affect the ultimate realization or utility of an output based on this cWSOD_n?
-        3.  **Assess cWSOD_n's Contribution to HLG(s):**
-            * Articulate clearly how an output conforming to cWSOD_n is expected to advance the HLG(s).
-            * Identify potential risks or ways in which cWSOD_n, if pursued, might inadvertently conflict with HLG(s) or lead to negative unintended consequences.
-        4.  **Identify Key Information Requirements implied by cWSOD_n:** What broad categories of information would be needed to realize an output based on this descriptor?
-    * **LD Update:** Detailed record of these uncertainties, goal alignment rationale, risks, and information requirements associated with cWSOD_n.
+            * *Crucially, identify all specific data points, parameters, or external information that are explicitly called out as unknown or to be determined within the Initial WSOD.*
+        2.  **Identify Potential Aleatoric Uncertainties:** What inherent randomness or external factors might affect the ultimate realization or utility of an output based on this Initial WSOD_n?
+        3.  **Assess Initial WSOD_n's Contribution to HLG(s):**
+            * Articulate clearly how an output conforming to Initial WSOD_n is expected to advance the HLG(s).
+            * Identify potential risks or ways in which Initial WSOD_n, if pursued, might inadvertently conflict with HLG(s) or lead to negative unintended consequences.
+        4.  **Identify Key Information Requirements (KIRQs) implied by Initial WSOD_n:** What specific pieces of information or data need to be acquired, generated, or clarified to fill the "known unknowns" within this descriptor and realize a final output?
+    * **LD Update:** Detailed record of these uncertainties, goal alignment rationale, risks, and information requirements associated with Initial WSOD_n.
 
-* **Stage 1.5: Stopping Criterion Check for Descriptor Elucidation**
-    * **Guiding Question:** "Is the current cWSOD_n sufficiently clear, aligned with HLGs, and are its inherent uncertainties sufficiently understood to guide a focused information acquisition phase, OR is the cost of further *descriptor* refinement likely to outweigh the benefits to clarity and HLG alignment *at this stage*?"
+* **Stage 1.5: Stopping Criterion Check for Initial Descriptor Elucidation**
+    * **Guiding Question:** "Is the current `Initial WSOD_n` sufficiently clear, aligned with HLGs, and *are all its key unknowns identified and framed as KIRQs*, such that we can proceed to a focused information acquisition phase, OR is the cost of further `Initial WSOD` refinement likely to outweigh the benefits to clarity and HLG alignment *at this stage*?"
     * **Decision Factors (User-driven, LLM-informed):**
-        1.  **Clarity for Action:** Is cWSOD_n clear enough to define the *scope* and *nature* of information needed next?
-        2.  **HLG Alignment Confidence:** Is there sufficient confidence that pursuing this cWSOD_n is a productive path towards the HLG(s), and are the risks understood?
-        3.  **Impact of Descriptor Uncertainties:** Are the remaining epistemic uncertainties *within the descriptor itself* manageable, or do they prevent effective planning for the next phase?
-        4.  **Cost/Benefit of Further Descriptor Refinement:** Would more iterations on the descriptor likely yield significant improvements in its utility for guiding subsequent phases, or are we hitting diminishing returns *for descriptor clarity itself*?
+        1.  **Completeness of Known Unknowns:** Have all significant "gaps" or "placeholders" in the `Initial WSOD` been identified and articulated as explicit KIRQs?
+        2.  **Clarity for Action:** Is `Initial WSOD_n` clear enough to define the *scope* and *nature* of information needed next, and to guide the formulation of specific queries or sub-tasks?
+        3.  **HLG Alignment Confidence:** Is there sufficient confidence that pursuing this `Initial WSOD_n` is a productive path towards the HLG(s), and are the risks understood?
+        4.  **Impact of Descriptor Uncertainties:** Are the remaining epistemic uncertainties *within the descriptor itself* manageable, or do they prevent effective planning for the next phase?
+        5.  **Cost/Benefit of Further Descriptor Refinement:** Would more iterations on the descriptor likely yield significant improvements in its utility for guiding subsequent phases, or are we hitting diminishing returns *for descriptor clarity itself*?
     * **Decision:**
         * **If criteria NOT met:** Iterate back to Stage 1.3 (or 1.2 if more fundamental exploration is needed). Document reasons.
-        * **If criteria ARE met:** cWSOD_n is designated the **Workable Stated Output Descriptor (WSOD)**. Proceed to Phase 2.
+        * **If criteria ARE met:** `Initial WSOD_n` is accepted as the **Working Stated Output Descriptor (WSOD)** for the purpose of Phase 2. Proceed to Phase 2.
 
 ---
 
-**Phase 2: Structured Information Acquisition & Uncertainty Logging (SIAUL)**
+**Phase 2: Structured Information Acquisition & Final WSOD Formulation (SIAF)**
 
-* **Objective:** To gather and organize the necessary Information Elements (IEs) to address the WSOD, explicitly logging the sources and nature of uncertainty for each IE.
+* **Objective:** To gather and organize the necessary Information Elements (IEs) to address the `Working WSOD`'s identified unknowns, explicitly logging the sources and nature of uncertainty for each IE. The culmination of this phase is the formulation of the **Final Workable Stated Output Descriptor (Final WSOD)**.
 
-* **Stage 2.1: Decompose WSOD into Information Requirements & Query Formulation**
-    * **Action:** Based on the WSOD and the "Key Information Requirements" identified in Stage 1.4:
-        * Use LLM(s) to break down the WSOD into specific questions, definitions needed, hypotheses to explore, types of data required.
-        * Formulate precise queries or tasks for LLMs or other information sources.
-    * **LD Update:** Detailed plan for information acquisition, structured under the WSOD.
+* **Stage 2.1: Decompose Working WSOD into Information Requirements & Query Formulation**
+    * **Action:** Based on the `Working WSOD` and the "Key Information Requirements" (KIRQs) identified in Stage 1.4:
+        * Use LLM(s) to break down the `Working WSOD` into specific questions, definitions needed, hypotheses to explore, types of data required.
+        * Formulate precise queries or tasks for LLMs or other information sources (e.g., decomposition into GOUAI sub-tasks or Simple LLM tasks).
+    * **LD Update:** Detailed plan for information acquisition, structured under the `Working WSOD`.
 
 * **Stage 2.2: Iterative Information Element (IE) Generation & Collection**
-    * **Action:** Employ LLM(s), databases, user expertise, etc., to generate/collect IEs.
+    * **Action:** Employ LLM(s), databases, user expertise, etc., to generate/collect IEs, addressing the KIRQs. This includes executing any decomposed sub-tasks.
 
 * **Stage 2.3: Uncertainty Characterization for each IE**
     * **Action (User, supported by LLM for identification):** For each significant IE:
@@ -81,26 +91,31 @@
         3.  **Aleatoric Uncertainties:** Note any inherent randomness or variability the IE describes or is subject to.
     * **LD Update:** Each IE is stored with its detailed uncertainty characterization.
 
-* **Stage 2.4: Sufficiency Check for Information Acquisition**
-    * **Guiding Question:** "Have we gathered enough information, with sufficiently characterized uncertainties, to attempt a meaningful synthesis towards the WSOD, OR is the cost/benefit of acquiring more/better information for key IEs justified by the expected improvement in the final output's ability to address the HLGs?"
+* **Stage 2.4: Formulation of the Final Workable Stated Output Descriptor (Final WSOD)**
+    * **Action (User, with LLM assistance):** Based on the `Working WSOD` and all collected and characterized IEs, synthesize a **Final WSOD**. This descriptor fully resolves the "known unknowns" identified in Phase 1, incorporates the acquired information, and provides a precise, actionable description of the desired output. This is the definitive blueprint for the output to be synthesized in Phase 3.
+    * **LD Update:** The `Final WSOD` is recorded, superseding or refining the `Working WSOD` in the `task_definition.md` (or relevant section of the LD).
+
+* **Stage 2.5: Sufficiency Check for Information Acquisition & Final WSOD**
+    * **Guiding Question:** "Have we gathered enough information, with sufficiently characterized uncertainties, to finalize the WSOD and to attempt a meaningful synthesis towards it, OR is the cost/benefit of acquiring more/better information for key IEs justified by the expected improvement in the final output's ability to address the HLGs?"
     * **Decision Factors (User-driven, LLM-informed):**
-        1.  **Coverage of WSOD:** Are there critical information gaps related to the WSOD's core components?
-        2.  **Impact of IE Uncertainties:** Are the epistemic uncertainties in key IEs so large that any output generated would be too unreliable to support the HLGs?
-        3.  **Cost/Benefit of Further IE Acquisition/Refinement:** What is the effort to reduce critical IE uncertainties versus the expected improvement in the final output's utility for HLG achievement?
-        4.  **Availability of Better Information:** Is it even possible to significantly reduce key epistemic uncertainties with available resources/methods?
+        1.  **Completeness of Final WSOD:** Does the `Final WSOD` completely and unambiguously describe the desired output, addressing all prior "known unknowns" with acquired information?
+        2.  **Coverage of Final WSOD:** Are there critical information gaps related to the `Final WSOD`'s core components?
+        3.  **Impact of IE Uncertainties:** Are the epistemic uncertainties in key IEs so large that any output generated would be too unreliable to support the HLGs?
+        4.  **Cost/Benefit of Further IE Acquisition/Refinement:** What is the effort to reduce critical IE uncertainties versus the expected improvement in the final output's utility for HLG achievement?
+        5.  **Availability of Better Information:** Is it even possible to significantly reduce key epistemic uncertainties with available resources/methods?
     * **Decision:**
-        * **If criteria NOT met:** Iterate within Stage 2.2/2.3 to acquire more/better IEs or refine existing ones. Document reasons.
-        * **If criteria ARE met:** Proceed to Phase 3.
+        * **If criteria NOT met:** Iterate within Stage 2.2/2.3 to acquire more/better IEs or refine existing ones, and re-formulate the `Final WSOD` in Stage 2.4. Document reasons.
+        * **If criteria ARE met:** Proceed to Phase 3 with the `Final WSOD`.
 
 ---
 
 **Phase 3: Output Synthesis & Integrated Uncertainty Assessment (OSIUA)**
 
-* **Objective:** To synthesize the collected IEs into an Approximate Output Text (AOT) that addresses the WSOD, and to create an integrated assessment of the AOT's uncertainties and its potential to achieve HLGs.
+* **Objective:** To synthesize the collected IEs into an Approximate Output Text (AOT) that addresses the `Final WSOD`, and to create an integrated assessment of the AOT's uncertainties and its potential to achieve HLGs.
 
 * **Stage 3.1: LLM-Assisted Output Synthesis**
     * **Action:** Employ LLM(s) to generate the AOT, explicitly instructing them to:
-        * Base the output on the IEs in the LD.
+        * Base the output on the IEs in the LD, guided by the `Final WSOD`.
         * Reference or incorporate the documented uncertainties of the IEs used.
         * Highlight where conclusions are drawn based on IEs with significant uncertainty or where assumptions were made during synthesis.
     * **LD Update:** Generated AOT is added.
@@ -108,11 +123,11 @@
 * **Stage 3.2: Integrated Uncertainty & Goal Impact Assessment for AOT**
     * **Action (User, supported by LLM for analysis and articulation):**
         1.  **Consolidated Uncertainty Summary:**
-            * Enumerate key epistemic uncertainties from the WSOD and IEs that significantly impact the AOT's reliability or completeness.
+            * Enumerate key epistemic uncertainties from the `Final WSOD` and IEs that significantly impact the AOT's reliability or completeness.
             * Describe epistemic uncertainties introduced during the LLM's synthesis process (e.g., potential misinterpretations, logical leaps not fully supported by low-uncertainty IEs).
             * Enumerate key aleatoric uncertainties relevant to the AOT's implications.
             * List critical assumptions underpinning the AOT.
-        2.  **WSOD Fulfillment Assessment:** How well, and in what specific ways, does the AOT address the components of the WSOD? Where are the gaps?
+        2.  **Final WSOD Fulfillment Assessment:** How well, and in what specific ways, does the AOT address the components of the `Final WSOD`? Where are the gaps?
         3.  **HLG Impact Review:**
             * Critically evaluate the AOT's *potential to achieve the user's high-level goals (HLGs)*, considering its documented uncertainties and assumptions.
             * What is the range of possible outcomes if decisions are based on this AOT?
@@ -128,8 +143,8 @@
     * **Decision:**
         * **If AOT is accepted:** Protocol concludes for this WSOD. The AOT and its full documentation are finalized.
         * **If AOT is NOT accepted:**
-            * Identify primary reasons (e.g., unacceptable uncertainty in AOT, poor WSOD fulfillment, unacceptable HLG impact/risk).
+            * Identify primary reasons (e.g., unacceptable uncertainty in AOT, poor `Final WSOD` fulfillment, unacceptable HLG impact/risk).
             * **Iterate:**
                 * Back to Stage 3.1 for refined synthesis if the issue is primarily LLM generation.
-                * Back to Phase 2 (SIAUL) if key IEs are missing or their uncertainties are too high.
-                * Back to Phase 1 (GDE) if the AOT reveals fundamental flaws in the WSOD itself or its alignment with HLGs. This acknowledges that realizing an output can clarify deficiencies in the initial descriptor.
+                * Back to Phase 2 (SIAF) if key IEs are missing or their uncertainties are too high, or if the `Final WSOD` needs re-formulation.
+                * Back to Phase 1 (GIDE) if the AOT reveals fundamental flaws in the `Initial WSOD` itself or its alignment with HLGs. This acknowledges that realizing an output can clarify deficiencies in the initial descriptor.
