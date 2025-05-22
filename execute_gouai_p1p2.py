@@ -329,9 +329,10 @@ task_type: "{parent_yaml.get('task_type', 'N/A')}"
     3. Parent Task WSOD Formulation (GOUAI Phase 1):
     Your FIRST and MOST CRITICAL task is to analyze the PARENT_HLG and any available meta-context to complete the phase one stages.
     4. Sub-task Decomposition (GOUAI Phase 2):
-    Based on phase 1 and phase 2.1, decompose the high level goal into a set of granular, actionable sub-tasks. For each proposed sub-task, you must define:
+    Based on phase 1 and phase 2.1, decompose the high level goal into a set of granular, actionable sub-tasks. The crucial requirement for the decomposition is that it is not merely a conceptual decomposition grouping similar ideas into a sub-task, but instead each the sub-task breakdown can be conceptualized as a series of executable processes that proceed chronologically and can be run on a one-off or ongoing basis.
+    For each proposed sub-task, you must define:
     * A clear High-Level Goal (HLG) for the sub-task.
-    * A preliminary list of key Epistemic Uncertainties (EUs) related to achieving the sub-task's HLG.
+    * A preliminary list of key Epistemic Uncertainties (EUs) related to achieving the sub-task's HLG. Previous subtask outputs might be epistemic uncertainties. 
     * A list of Key Information Requirements (KIRQs) needed to resolve those EUs or define the sub-task's output.
     This will all help us formulate a WSOD after the KIRQ information is retrieved and the uncertainties resolved
     5. Output Formatting Instructions:
