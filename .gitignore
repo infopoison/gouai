@@ -1,3 +1,5 @@
 /projects
 .gouai_config.yaml
 gouai_v1.md
+.DS_Store
+/__pycache__
