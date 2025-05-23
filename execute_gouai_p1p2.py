@@ -326,7 +326,7 @@ task_type: "{parent_yaml.get('task_type', 'N/A')}"
 **Core Task:**
     1. Thoroughly review the GOUAI Protocol Definition...
     2. Task WSOD Formulation Support (GOUAI Phase 1):
-    Your FIRST and MOST CRITICAL task is to analyze the HLG in order to support the formulation of a WSOD 
+    Your FIRST and MOST CRITICAL task is to analyze the HLG and context in order to support the formulation of a WSOD 
     3. Sub-task Decomposition (GOUAI Phase 2):
     Based on your execution of phase 1 and phase 2, decompose the high level goal into a set of granular, actionable sub-tasks. The crucial requirement for the decomposition is that it is not merely a conceptual decomposition grouping similar ideas into a sub-task, but instead each the sub-task breakdown can be conceptualized as a series of executable processes that proceed chronologically and can be run on a one-off or ongoing basis.
     For each proposed sub-task, you must define:
