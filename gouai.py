@@ -15,6 +15,8 @@ GOUAI_CONTEXT_HANDLER_SCRIPT = str(SCRIPT_DIR / "gouai_context_handler.py")
 GOUAI_PROJECT_INIT_SCRIPT = str(SCRIPT_DIR / "gouai_project_init.py")
 GOUAI_EXECUTE_P1P2_SCRIPT = str(SCRIPT_DIR / "execute_gouai_p1p2.py")
 GOUAI_MAKE_SUBTASKS_SCRIPT = str(SCRIPT_DIR / "make_gouai_subtasks.py")
+GOUAI_COMPILE_HLGS_SCRIPT = str(SCRIPT_DIR / "compile_gouai_hlgs.py") # Add this line
+
 
 # --- Direct Imports from GOUAI Modules for Chat ---
 try:
@@ -260,6 +262,13 @@ def main_cli():
     chat_parser.add_argument("--project_root", required=True, help="Path to the GOUAI project root.")
     chat_parser.add_argument("--session_id", help="Optional: specify a session ID to resume or use for the chat.")
     chat_parser.set_defaults(func=lambda args_ns: handle_chat_session(args_ns.task_id, args_ns.project_root, args_ns.session_id))
+
+    # --- compile-hlgs subcommand ---
+    compile_hlgs_parser = subparsers.add_parser("compile-hlgs", help="Compiles HLGs and output summaries from a GOUAI project.")
+    compile_hlgs_parser.add_argument("--project_root", required=True, help="Path to the root directory of the GOUAI project.")
+    compile_hlgs_parser.add_argument("--output_file", default="gouai_hlg_report.md", help="Name of the output Markdown file. Created in project_root.")
+    compile_hlgs_parser.set_defaults(func=lambda args_ns: run_script_capture_stdout(GOUAI_COMPILE_HLGS_SCRIPT, ["--project_root", args_ns.project_root, "--output_file", args_ns.output_file]))
+
 
     args = parser.parse_args()
     
