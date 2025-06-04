@@ -267,9 +267,27 @@ def main_cli():
     compile_hlgs_parser = subparsers.add_parser("compile-hlgs", help="Compiles HLGs and output summaries from a GOUAI project.")
     compile_hlgs_parser.add_argument("--project_root", required=True, help="Path to the root directory of the GOUAI project.")
     compile_hlgs_parser.add_argument("--output_file", default="gouai_hlg_report.md", help="Name of the output Markdown file. Created in project_root.")
-    compile_hlgs_parser.set_defaults(func=lambda args_ns: run_script_capture_stdout(GOUAI_COMPILE_HLGS_SCRIPT, ["--project_root", args_ns.project_root, "--output_file", args_ns.output_file]))
-
-
+    compile_hlgs_parser.add_argument(
+        "--days_since_modified",
+        type=int,
+        help="Optional: Include .md and .txt files from 'outputs/' folders modified within this many days in the report and review material for LLM analysis."
+    )
+    compile_hlgs_parser.add_argument(
+        "--suggestions_output_file",
+        default="gouai_review_suggestions.md",
+        help="Filename for LLM-generated suggestions if review material is provided. "
+             "Saved in the project_root directory. Default: 'gouai_review_suggestions.md'."
+    )
+    compile_hlgs_parser.set_defaults(
+        func=lambda args_ns: run_script_capture_stdout(
+            GOUAI_COMPILE_HLGS_SCRIPT, 
+            [
+                "--project_root", args_ns.project_root, 
+                "--output_file", args_ns.output_file
+            ] + (["--days_since_modified", str(args_ns.days_since_modified)] if args_ns.days_since_modified is not None else []) + \
+                (["--suggestions_output_file", args_ns.suggestions_output_file] if args_ns.suggestions_output_file != "gouai_review_suggestions.md" else [])
+        )
+    )
     args = parser.parse_args()
     
     if args.command != "chat": # Non-chat commands use the simple stdout/stderr print
